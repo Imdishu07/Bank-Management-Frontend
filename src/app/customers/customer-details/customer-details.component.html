@@ -1,0 +1,56 @@
+<div class="customer-details-container">
+    <h2>Customer Details</h2>
+    <div class="search-container">
+      <label for="aadharNumber">Enter Aadhar Number:</label>
+      <input type="text" id="aadharNumber" [(ngModel)]="aadharNumberInput" placeholder="Enter Aadhar Number" maxlength="12">
+      <button (click)="getCustomer()">Get Details</button>
+    </div>
+    <div class="customer-info" *ngIf="customer ">
+      <table>
+        <tr>
+          <th>First Name</th>
+          <td>{{ customer.firstName }}</td>
+        </tr>
+        <tr>
+          <th>Last Name</th>
+          <td>{{ customer.lastName }}</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{{ customer.email }}</td>
+        </tr>
+        <tr>
+          <th>Phone Number</th>
+          <td>{{ customer.phoneNumber }}</td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td>{{ customer.address }}</td>
+        </tr>
+        <tr>
+          <th>Date of Birth</th>
+          <td>{{ customer.dateOfBirth | date }}</td>
+        </tr>
+        <tr>
+          <th>Aadhar Number</th>
+          <td>{{ customer.aadharNumber | aadharFormat}}</td>
+        </tr>
+        <tr>
+          <th>Account Type</th>
+          <td>{{ customer.accountType }}</td>
+        </tr>
+        <tr>
+          <th>Balance</th>
+          <td>{{ customer.balance | rupee }}</td>
+        </tr>
+        <!-- <tr>
+          <th>Balance</th>
+          <td>{{ customer.balance }}</td>
+        </tr> -->
+      </table>
+    </div>
+    <div class="customer-not-found" *ngIf="!customer && customerNotFound">Customer not found.</div>
+  </div>
+  <router-outlet></router-outlet>
+  
+  

@@ -1,0 +1,50 @@
+/* Navbar styles */
+nav {
+    background-color: #d10909;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #8A2BE2;
+  }
+  
+  /* Button container styles */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Button styles */
+  .nav-button {
+    padding: 20px 30px;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    background-color:#333; /* Change background color to black */
+  }
+  
+  
+  .nav-button:hover {
+    transform: scale(1.1); /* Scale up on hover */
+    box-shadow: 0 0 25px rgb(117, 255, 4); /* Add shadow on hover */
+  }
+  

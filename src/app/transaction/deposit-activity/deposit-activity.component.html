@@ -1,0 +1,22 @@
+<div class="deposit-form-container">
+    <h2>Deposit Activity</h2>
+    <form [formGroup]="depositForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="accountNo">Account Number:</label>
+            <div>
+                <input type="number" id="accountNo" formControlName="accountNo" placeholder="Enter Account Number" (input)="limitLength($event, 4)">
+                <div *ngIf="depositForm.get('accountNo')?.errors?.['required']" class="error-message"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <div>
+                <input type="number" id="amount" formControlName="amount" placeholder="Enter Amount">
+                <div *ngIf="depositForm.get('amount')?.errors?.['required']" class="error-message"></div>
+                <div *ngIf="depositForm.get('amount')?.errors?.['min']" class="error-message">Amount must be greater than 0.</div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!depositForm.valid">Deposit</button>
+    </form>
+</div>
+<router-outlet></router-outlet>

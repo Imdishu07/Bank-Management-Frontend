@@ -1,0 +1,15 @@
+<nav>
+  <ul>
+      <li><a routerLink="/" class="nav-link" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/customer" class="nav-link" routerLinkActive="active">Customer</a></li>
+      <li><a routerLink="/account" class="nav-link" routerLinkActive="active">Account</a></li>
+      <li><a routerLink="/transaction" class="nav-link" routerLinkActive="active">Transaction</a></li>
+      <li class="bank-name">
+  <button (click)="onSubmit()" [ngClass]="isLoggedIn ? 'logout-button' : 'login-button'">
+    {{ action }}
+  </button>
+</li>
+  </ul>
+</nav>
+
+

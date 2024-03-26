@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="colorful-box">
+    <h2 style="text-align: center;color: white;">{{ heading }}</h2>
+    <form #customerForm="ngForm" (ngSubmit)="submitForm(customerForm)">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="formData.firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="formData.lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="formData.email" required>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" [(ngModel)]="formData.phoneNumber" maxlength="10" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" id="address" name="address" [(ngModel)]="formData.address" required>
+      </div>
+      <div class="form-group">
+        <label for="dateOfBirth">Date of Birth:</label>
+        <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" [(ngModel)]="formData.dateOfBirth" required>
+      </div>
+      <div class="form-group">
+        <label for="aadharNumber">Aadhar Number:</label>
+        <input type="text" class="form-control" id="aadharNumber" name="aadharNumber" [(ngModel)]="formData.aadharNumber" minlength="" maxlength="12" required [disabled]="isEditing">
+      </div>
+      <div class="form-group">
+        <label for="accountType">Account Type:</label>
+        <input type="text" class="form-control" id="accountType" name="accountType" [(ngModel)]="formData.accountType" required [disabled]="isEditing">
+      </div>
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <input type="text" class="form-control" id="status" name="status" [(ngModel)]="formData.status" required>
+      </div>
+      <div class="form-group">
+        <label for="balance">Balance:</label>
+        <input type="number" class="form-control" id="balance" name="balance" [(ngModel)]="formData.balance" required [disabled]="isEditing">
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+  </div>
+</div>

@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    
+    
+}
+.container {
+    text-align: center;
+    margin-top: 100px;
+    /* object-fit: fill; */
+
+}
+.bank-symbol {
+    width: 100px; /* Adjust according to the size of your symbol */
+    height: 100px; /* Adjust according to the size of your symbol */
+    background-color: #262829; /* Adjust background color */
+    border-radius: 50%; /* Ensures it's a circle */
+    display: inline-block;
+    line-height: 100px;
+    font-size: 50px;
+    color: #ffffff; /* Adjust text color */
+}
+.bank-name {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333333; /* Adjust text color */
+    font-weight: bold;
+}
+img {
+    width: 100%;
+    height: auto;
+    margin-top: -100px;
+    
+    /* opacity: 50%; */
+  }
+
+  .overlay-text {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    /* background-color: #000000;  */
+    color: #fff; 
+    padding: 10px 20px; 
+    font-size: 50px; 
+    text-align: center;
+    font-weight: bolder;
+    color: #000000f8;
+    font-family:cursive;
+  }
+
+  /* .overlay-text:hover{
+    color: #f4f4f4;
+  } */
+
+  /* .background-image {
+    background-image: url("../../../assets/Screenshot 2024-03-19 171627.png");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+  } */

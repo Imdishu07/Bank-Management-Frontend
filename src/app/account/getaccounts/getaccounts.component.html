@@ -1,0 +1,24 @@
+<table>
+    <thead>
+      <tr>
+        <th>Account Number</th>
+        <th>Created On</th>
+        <th>Balance</th>
+        <th>Account Type</th>
+        <th>Customer ID</th>
+        <th>Change Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let account of accounts">
+        <td>{{ account.accountNo }}</td>
+        <td>{{ account.createdOn | date }}</td>
+        <td>{{ account.balance }}</td>
+        <td>{{ account.accountType }}</td>
+        <td>{{ account.customerId }}</td>
+        <td [ngStyle]="{ 'color': account.status === 'Inactive' ? 'red' : 'green' }">{{ account.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <router-outlet></router-outlet>
+  

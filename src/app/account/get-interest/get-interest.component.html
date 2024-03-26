@@ -1,0 +1,28 @@
+<div class="custom-deposit-form-container">
+    <h2>Get Interest</h2>
+    <form [formGroup]="interestForm" (ngSubmit)="onSubmit()">
+        <div class="custom-form-group">
+            <label for="accountNo">Account Number:</label>
+            <div>
+                <input type="number" id="accountNo" formControlName="accountNo" placeholder="Enter Account Number" (input)="limitLength($event, 4)">
+                <div *ngIf="interestForm.get('accountNo')?.hasError('required')" class="custom-error-message">Account number is required.</div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="interestForm.invalid">Get Interest</button>
+    </form>
+
+    <div *ngIf="showTable && interestData" class="custom-customer-details-container">
+        <div class="custom-customer-details-container">
+            <table class="custom-customer-details-table">
+                <tr>
+                    <!-- <th>Interest Amount</th>
+                    <td>{{ interestData.interestAmount }}</td> -->
+                    <th>Interest Rate</th>
+                    <td>{{ interestData.interestRate }}</td>
+                    <th>Account Type</th>
+                    <td>{{ interestData.accountType }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

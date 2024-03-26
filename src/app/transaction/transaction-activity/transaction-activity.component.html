@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Transaction ID</th>
+      <th>Account ID</th>
+      <th>Time</th>
+      <th>Type</th>
+      <th>Amount</th>
+      <th>Available Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaction of transactions"> <!-- Iterate over each transaction -->
+      <td>{{ transaction.transactionId }}</td>
+      <td>{{ transaction.accountId }}</td>
+      <td>{{ transaction.time | date:'longDate'}}</td>
+      <td [ngStyle]="{ 'color': transaction.type === 'Withdrawal' ? 'red' : 'green' }">{{ transaction.type }}</td>
+      <td>{{ transaction.amount }}</td>
+      <td>{{ transaction.availableBalance }}</td>
+    </tr>
+  </tbody>
+</table>

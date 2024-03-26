@@ -1,0 +1,38 @@
+<table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Address</th>
+        <th>Date of Birth</th>
+        <th>Aadhar Number</th>
+        <th>Account Number</th>
+        <th>Balance</th>
+        <th>Actions</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{ customer.firstName }}</td>
+        <td>{{ customer.lastName }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.phoneNumber }}</td>
+        <td>{{ customer.address }}</td>
+        <td>{{ customer.dateOfBirth | date:'yyyy-MM-dd' }}</td>
+        <td>{{ customer.aadharNumber  | aadharFormat }}</td>
+        <td>{{ customer.accountNo }}</td>
+        <td>{{ customer.balance | rupee}}</td>
+        <td>
+          <button (click)="deleteCustomer(customer.aadharNumber)">Delete</button>
+        </td>
+        <td>
+          <button (click)="showCustomer(customer.aadharNumber)">Update</button>
+        </td>
+        
+      </tr>
+    </tbody>
+  </table>
+  <router-outlet></router-outlet>
